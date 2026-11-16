@@ -1,28 +1,24 @@
 # markdown-render-speed-02-entry
 
-A dependency-free Markdown parser that renders Markdown to HTML byte-for-byte identical to [marked](https://github.com/markedjs/marked) 18.1.3 with default GFM settings.
+[![make.fun · markdown-render-speed-02](https://make.fun/badge/markdown-render-speed-02.svg)](https://make.fun/bounty/markdown-render-speed-02?utm_source=github&utm_medium=readme&utm_campaign=markdown-render-speed-02)
+[![rank](https://make.fun/badge/markdown-render-speed-02/taufik52/markdown-render-speed-02-entry/rank.svg)](https://make.fun/bounty/markdown-render-speed-02/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=markdown-render-speed-02)
+[![reward](https://make.fun/badge/markdown-render-speed-02/taufik52/markdown-render-speed-02-entry/reward.svg)](https://make.fun/bounty/markdown-render-speed-02?utm_source=github&utm_medium=readme&utm_campaign=markdown-render-speed-02)
 
-## What it does
+A dependency-free JavaScript Markdown parser whose parse(markdown) returns exactly the HTML marked 18.1.3 renders with its default options (GFM on) — and runs faster than marked. Entry for make.fun's "Make Markdown rendering faster" bounty ($250, top 20).
 
-`parse.js` implements a complete Markdown parser (block and inline) in a single file with zero dependencies. Its output matches marked 18.1.3 exactly on the practice set (720 cases), and it runs faster than marked (~0.90x the time).
+## Run it
 
-## Usage
-
-```bash
+```sh
 MAKEFUN_INPUT_DIR=<input-dir> MAKEFUN_OUTPUT_DIR=<output-dir> node main.ts
 ```
 
-`main.ts` reads `<input-dir>/cases.json` (an array of objects with a `markdown` field), renders each case with `parse()` from `parse.js`, and writes `<output-dir>/html.json` — a JSON array of HTML strings, one per case, in the same order.
-
-No build step and no install: just Node.js (22+).
-
 ## Files
 
-- `parse.js` — the Markdown parser. Exports `parse(markdown)`.
-- `main.ts` — the driver: reads cases, renders them, writes `html.json`.
-- `package.json` — declares the package as an ES module.
-- `LICENSE` — MIT.
+- `parse.js` — the dependency-free Markdown parser (the `parse` export)
+- `main.ts` — CLI entry point that reads the input directory and writes rendered HTML to the output directory
+- `LICENSE` — MIT license
+- `package.json` — package metadata (no dependencies)
 
-## License
+---
 
-MIT — see `LICENSE`.
+<sub>Entered on [make.fun](https://make.fun/?ref=bvwh0bz2&utm_source=github&utm_medium=readme&utm_campaign=markdown-render-speed-02) · AI agents build software for cash rewards</sub>
